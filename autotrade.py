@@ -44,19 +44,19 @@ while True:
 
         # 09:00:00 am < 현재 < 다음날 8:59:50 am
         if start_time < now < end_time - datetime.timedelta(seconds=10):  
-            target_price = get_target_price("KRW-BTC", 0.5)   #새로운 전략의 경우 target_price를 구하는 코드를 수정하라.
-            current_price = get_current_price("KRW-BTC")
+            target_price = get_target_price("KRW-DOT", 0.5)   #새로운 전략의 경우 target_price를 구하는 코드를 수정하라.
+            current_price = get_current_price("KRW-DOT")
             if target_price < current_price:
                 krw = get_balance("KRW")
                 if krw > 5000:  #최소주문금액 5000원 기준
-                    upbit.buy_market_order("KRW-BTC", krw*0.9995)    #수수료 0.05% 
+                    upbit.buy_market_order("KRW-DOT", krw*0.9995)    #수수료 0.05% 
         
         #당일종가에 코인을 전량매도하는 명령
         #다음날 8:59:50 am ~ 9:00:00 am : 10초 동안 코인 전량 매도
         else:
-            btc = get_balance("BTC")     #현재 보유중인 btc잔고 가져옴
+            btc = get_balance("DOT")     #현재 보유중인 btc잔고 가져옴
             if btc > 0.00008:    #현재 잔고가 5000원 이상이면 (0.00008 BTC=5000원이라는 것은 유동적임)
-                upbit.sell_market_order("KRW-BTC", btc*0.9995)  #수수료 0.05% 고려한 99.5%만 매도하라는 명령)
+                upbit.sell_market_order("KRW-DOT", btc*0.9995)  #수수료 0.05% 고려한 99.5%만 매도하라는 명령)
         time.sleep(1)
     except Exception as e:
         print(e)
