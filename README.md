@@ -5,7 +5,7 @@
 # 경로 이동: cd 경로/
 # vim 에디터로 파일 열기: vim 폴더 or 경로.py
 # vim 에디터 입력:    i
-# vim 에디터 저장:    :wq!
+# vim 에디터 저장:       :wq!
 # 패키지 목록 업데이트: sudo apt update
 # pip3 설치: sudo apt install python3-pip
 # pip3로 pyupbit 설치: pip3 install pyupbit
