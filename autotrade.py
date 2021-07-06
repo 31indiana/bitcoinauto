@@ -55,7 +55,7 @@ while True:
         #다음날 8:59:50 am ~ 9:00:00 am : 10초 동안 코인 전량 매도
         else:
             btc = get_balance("XRP")     #현재 보유중인 btc잔고 가져옴
-            if btc > 0.00008:    #현재 잔고가 5000원 이상이면 (0.00008 BTC=5000원이라는 것은 유동적임)
+            if btc > 6:    #현재 잔고가 5000원 이상이면 (0.00008 BTC=5000원이라는 것은 유동적임, 리플 21년7월6일 현재 788원 기준 5000원은 수량 약 6개)
                 upbit.sell_market_order("KRW-XRP", btc*0.9995)  #수수료 0.05% 고려한 99.5%만 매도하라는 명령)
         time.sleep(1)
     except Exception as e:
